@@ -3,9 +3,9 @@
 #include <thread>
 #include <unistd.h>
 /*! \class Signal
-    \brief An Implementation of Threads Using Semaphores 
+    \brief An Implementation of Threads Using Semaphores
 
-   Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
+   Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions
 
 */
 /*! displays a message first*/
@@ -15,9 +15,11 @@ void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
+  theSemaphore->Signal();
 }
 /*! displays a message second*/
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
+  theSemaphore->Wait();
   std::cout <<"This ";
   std::cout << "will ";
   std::cout << "appear ";
