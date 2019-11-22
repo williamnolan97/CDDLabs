@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Exercise Three: Rendezvous: Lab 3</title>
+<title>Exercise Four: Mutual Exclusion: Semaphore Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,7 +28,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Exercise Three: Rendezvous
+   <div id="projectname">Exercise Four: Mutual Exclusion
    </div>
   </td>
  </tr>
@@ -61,7 +61,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('class_semaphore.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -79,28 +79,48 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="class_semaphore-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Lab 3 </div>  </div>
+<div class="title">Semaphore Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>An implementation of a rendezvous. A message is displayed in two parts. Both threads must arrive at the rendezvous point before they can continue. TaskOne is carried out by threadOne, taskTwo is carried out by threadTwo.</p><dl class="section return"><dt>Returns</dt><dd>either part one/two of the message </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sem1</td><td><a class="el" href="class_semaphore.html" title="A Semaphore Implementation. ">Semaphore</a> object representing firstThread arrival </td></tr>
-    <tr><td class="paramname">sem2</td><td><a class="el" href="class_semaphore.html" title="A Semaphore Implementation. ">Semaphore</a> object representing secondThread arrival </td></tr>
-    <tr><td class="paramname">taskOneDelay</td><td>represents the time taskOne should sleep for </td></tr>
-    <tr><td class="paramname">taskTwoDelay</td><td>represents the time taskTwo should sleep for</td></tr>
-  </table>
-  </dd>
-</dl>
-<h1><a class="anchor" id="Rendezvous"></a>
-Rendezvous</h1>
-<p>This lab demonstrates a rendezvous. A message is displayed in two parts. Both threads must arrive at one point (the rendezvous) before they can continue. </p>
-</div></div><!-- contents -->
+
+<p>A <a class="el" href="class_semaphore.html" title="A Semaphore Implementation. ">Semaphore</a> Implementation.  
+ <a href="class_semaphore.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_semaphore_8h_source.html">Semaphore.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0d9290d316636875ca85d1d78950a817"><td class="memItemLeft" align="right" valign="top"><a id="a0d9290d316636875ca85d1d78950a817"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Semaphore</b> (unsigned int uiCount=0)</td></tr>
+<tr class="separator:a0d9290d316636875ca85d1d78950a817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72aabebf026e3a8b1f3e4d0fa8ee1eda"><td class="memItemLeft" align="right" valign="top"><a id="a72aabebf026e3a8b1f3e4d0fa8ee1eda"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Wait</b> ()</td></tr>
+<tr class="separator:a72aabebf026e3a8b1f3e4d0fa8ee1eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f700173ae86ae623684109066e07656"><td class="memTemplParams" colspan="2"><a id="a7f700173ae86ae623684109066e07656"></a>
+template&lt;typename R , typename P &gt; </td></tr>
+<tr class="memitem:a7f700173ae86ae623684109066e07656"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Wait</b> (const std::chrono::duration&lt; R, P &gt; &amp;crRelTime)</td></tr>
+<tr class="separator:a7f700173ae86ae623684109066e07656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f92f738b4486439b296d8e235895f2"><td class="memItemLeft" align="right" valign="top"><a id="a86f92f738b4486439b296d8e235895f2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Signal</b> ()</td></tr>
+<tr class="separator:a86f92f738b4486439b296d8e235895f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="class_semaphore.html" title="A Semaphore Implementation. ">Semaphore</a> Implementation. </p>
+<p>Uses C++11 features such as mutex and condition variables to implement <a class="el" href="class_semaphore.html" title="A Semaphore Implementation. ">Semaphore</a> </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="_semaphore_8h_source.html">Semaphore.h</a></li>
+<li>Semaphore.cpp</li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="class_semaphore.html">Semaphore</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

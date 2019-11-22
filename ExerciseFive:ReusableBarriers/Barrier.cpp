@@ -1,6 +1,6 @@
 //Author: William Nolan
 //Creation Date: 21-11-2019
-//Licence: GNU 
+//Licence: GNU
 
 /*! \file Barrier.cpp
     \brief Barrier class implementation.

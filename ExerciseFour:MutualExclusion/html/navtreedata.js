@@ -1,8 +1,8 @@
 var NAVTREE =
 [
-  [ "Exercise Three: Rendezvous", "index.html", [
+  [ "Exercise Four: Mutual Exclusion", "index.html", [
     [ "Lab 3", "index.html", [
-      [ "Rendezvous", "index.html#Rendezvous", null ]
+      [ "Exclusion", "index.html#Mutual", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Exercise Three: Rendezvous: Lab 3</title>
+<title>Exercise Four: Mutual Exclusion: Lab 3</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,7 +28,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Exercise Three: Rendezvous
+   <div id="projectname">Exercise Four: Mutual Exclusion
    </div>
   </td>
  </tr>
@@ -83,19 +83,17 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="title">Lab 3 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>An implementation of a rendezvous. A message is displayed in two parts. Both threads must arrive at the rendezvous point before they can continue. TaskOne is carried out by threadOne, taskTwo is carried out by threadTwo.</p><dl class="section return"><dt>Returns</dt><dd>either part one/two of the message </dd></dl>
+<div class="textblock"><p>An implementation of a mutual exclusion. All threads have access to a shared variable and are trying to increment it. Mutual exclusion must be implemented to prevent a race condition.</p><dl class="section return"><dt>Returns</dt><dd>num_threads * 10000 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sem1</td><td><a class="el" href="class_semaphore.html" title="A Semaphore Implementation. ">Semaphore</a> object representing firstThread arrival </td></tr>
-    <tr><td class="paramname">sem2</td><td><a class="el" href="class_semaphore.html" title="A Semaphore Implementation. ">Semaphore</a> object representing secondThread arrival </td></tr>
-    <tr><td class="paramname">taskOneDelay</td><td>represents the time taskOne should sleep for </td></tr>
-    <tr><td class="paramname">taskTwoDelay</td><td>represents the time taskTwo should sleep for</td></tr>
+    <tr><td class="paramname">num_threads</td><td>is the number of threads used </td></tr>
+    <tr><td class="paramname">aSemaphore</td><td><a class="el" href="class_semaphore.html" title="A Semaphore Implementation. ">Semaphore</a> object initialised to open</td></tr>
   </table>
   </dd>
 </dl>
-<h1><a class="anchor" id="Rendezvous"></a>
-Rendezvous</h1>
-<p>This lab demonstrates a rendezvous. A message is displayed in two parts. Both threads must arrive at one point (the rendezvous) before they can continue. </p>
+<h1><a class="anchor" id="Mutual"></a>
+Exclusion</h1>
+<p>This lab demonstrates a mutual exclusion. A number of threads try to increment a shared variable and mutual exclusion will be used to prevent a race condition. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
