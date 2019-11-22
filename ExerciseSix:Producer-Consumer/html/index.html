@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Exercise Five: Reusable Barriers: Lab 5</title>
+<title>Exercise Six: Producer-Consumer: Lab 6</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Exercise Five: Reusable Barriers
+   <div id="projectname">Exercise Six: Producer-Consumer
    </div>
   </td>
  </tr>
@@ -59,20 +59,19 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">Lab 5 </div>  </div>
+<div class="title">Lab 6 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Runs a number of threads and makes them wait at a barrier before proceeding. All threads have access to a shared variable and are trying to increment it. Mutual exclusion must be implemented to prevent a race condition</p><dl class="section return"><dt>Returns</dt><dd>Prints A+i and later B+i </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="textblock"><p>Run two threads, one's consumer, one's producer. Demonstates the Producer-Consumer Solution</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">aBarrier</td><td>the barrier for the threads to used </td></tr>
+    <tr><td class="paramname">numLoops</td><td>number of times event will be produced </td></tr>
     <tr><td class="paramname">num_threads</td><td>number of threads created</td></tr>
   </table>
   </dd>
 </dl>
-<h1><a class="anchor" id="Reusable"></a>
-Barriers</h1>
-<p>Creates a barrier for a number of threads </p>
+<h1><a class="anchor" id="Producer-Consumer"></a>
+Producer-Consumer</h1>
+<p>Demonstates the Producer-Consumer Solution </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
