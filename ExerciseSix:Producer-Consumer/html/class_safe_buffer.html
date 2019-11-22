@@ -60,6 +60,7 @@ $(document).ready(function(){initNavTree('class_safe_buffer.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_safe_buffer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">SafeBuffer Class Reference</div>  </div>
@@ -68,12 +69,27 @@ $(document).ready(function(){initNavTree('class_safe_buffer.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac3ed0799ec2e84c97e36b22c83f7abf5"><td class="memItemLeft" align="right" valign="top"><a id="ac3ed0799ec2e84c97e36b22c83f7abf5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>push</b> (<a class="el" href="class_event.html">Event</a>)</td></tr>
-<tr class="separator:ac3ed0799ec2e84c97e36b22c83f7abf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90a33fca4d838f7c0eef6e8557f3c281"><td class="memItemLeft" align="right" valign="top"><a id="a90a33fca4d838f7c0eef6e8557f3c281"></a>
-<a class="el" href="class_event.html">Event</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> ()</td></tr>
-<tr class="separator:a90a33fca4d838f7c0eef6e8557f3c281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2ee8e97d0d0e6f60a922e6aff1dc7c"><td class="memItemLeft" align="right" valign="top"><a id="a1a2ee8e97d0d0e6f60a922e6aff1dc7c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Push</b> (char)</td></tr>
+<tr class="separator:a1a2ee8e97d0d0e6f60a922e6aff1dc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9df398c5644c7723d4a032e8e967442"><td class="memItemLeft" align="right" valign="top"><a id="ad9df398c5644c7723d4a032e8e967442"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>Pop</b> ()</td></tr>
+<tr class="separator:ad9df398c5644c7723d4a032e8e967442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a7f90950b182359904348ff978ebb96c6"><td class="memItemLeft" align="right" valign="top"><a id="a7f90950b182359904348ff978ebb96c6"></a>
+std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mutex</b></td></tr>
+<tr class="separator:a7f90950b182359904348ff978ebb96c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab374b9839a583473e1ec8938715a8e7"><td class="memItemLeft" align="right" valign="top"><a id="aab374b9839a583473e1ec8938715a8e7"></a>
+std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>items</b></td></tr>
+<tr class="separator:aab374b9839a583473e1ec8938715a8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8de2bc2e0f6672f448ef0095faacf8c"><td class="memItemLeft" align="right" valign="top"><a id="aa8de2bc2e0f6672f448ef0095faacf8c"></a>
+std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>spaces</b></td></tr>
+<tr class="separator:aa8de2bc2e0f6672f448ef0095faacf8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db738cc1b4be3eeba47f322008a2c3e"><td class="memItemLeft" align="right" valign="top"><a id="a8db738cc1b4be3eeba47f322008a2c3e"></a>
+std::queue&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>safeBuffer</b></td></tr>
+<tr class="separator:a8db738cc1b4be3eeba47f322008a2c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_safe_buffer_8h_source.html">SafeBuffer.h</a></li>

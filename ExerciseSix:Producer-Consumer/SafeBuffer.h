@@ -2,28 +2,20 @@
 //Creation Date: 21-11-2019
 //Licence: GNU
 
- #pragma once
- #include "Event.h"
- #include "Semaphore.h"
- #include <vector>
+#include <mutex>
+#include "Semaphore.h"
+#include <queue>
 
- /*! \file SafeBuffer.h
-     \brief Consumer, securely takes and prints data.
+/*! \file SafeBuffer.h
+    \brief SafeBuffer header file.
  */
-
- class SafeBuffer
- {
-   private:
-     std::vector<Event> data;
-     std::shared_ptr<Semaphore> mutex;
-     std::shared_ptr<Semaphore> semaphore;
-
-   public:
-     SafeBuffer();
-     int push(Event);
-     Event pop();
- };
-
-
-
-/* SafeBuffer.h ends here */
+class SafeBuffer {
+ public:
+  std::shared_ptr<Semaphore> mutex;
+  std::shared_ptr<Semaphore> items;
+  std::shared_ptr<Semaphore> spaces;
+  std::queue<char> safeBuffer;
+  SafeBuffer();
+  void Push(char);
+  char Pop();
+};

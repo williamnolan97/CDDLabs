@@ -1,9 +1,6 @@
-#Joseph Kehoe 13/9/2017
-#Second improved Makefile
-#Used to contain commands to compile projects
-#Equivalent(?) to a project file in VStudio -- only better!
-#See http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ for info.
-
+#Author: William Nolan
+#Date: 21-11-2019
+#Licence: GNU
 
 CC=g++
 CFLAGS= -std=c++17 -pthread
@@ -12,8 +9,8 @@ CFLAGS= -std=c++17 -pthread
 %.o: %.cpp
 	$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
 
-ALL: main.o Semaphore.o Event.o SafeBuffer.o
-	$(CC) -o main main.o Semaphore.o Event.o SafeBuffer.o $(CFLAGS) $(DEBUGFLAGS)
+ALL: main.o Semaphore.o SafeBuffer.o
+	$(CC) -o prodCon main.o Semaphore.o SafeBuffer.o $(CFLAGS) $(DEBUGFLAGS)
 
 DEBUG: DEBUGFLAGS = -DDEBUG
 DEBUG: ALL

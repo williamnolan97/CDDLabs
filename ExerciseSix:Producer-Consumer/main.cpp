@@ -2,87 +2,97 @@
 //Creation Date: 21-11-2019
 //Licence: GNU
 
-#include "SafeBuffer.h"
-#include "Event.h"
-#include <iostream>
-#include <thread>
-#include <vector>
-
-static const int num_threads = 100;
-const int numLoops = 20;
-
 /*! \file main.cpp
-    \brief Run two threads, one's consumer, one's producer.
+    \brief Demonstrates the Producer-Consumer problem
 */
 
-/*! \brief Run two threads, one's consumer, one's producer.
-    Demonstates the Producer-Consumer Solution
+#include "SafeBuffer.h"
+#include <iostream>
+#include <chrono>
+#include <thread>
 
-    \param numLoops number of times event will be produced
+int characterCountBuffer[26] = {0};
+int num_threads = 5;
+
+/*! \brief Demonstrates the Producer-Consumer problem
+
+    \return The occurance of each character in the SafeBuffer
+    \param sBuff the SafeBuffer
     \param num_threads number of threads created
+    \param characterCountBuffer Main Buffer for counting characters consumed
  */
 
 /*! \mainpage Lab 6
     \section Producer-Consumer
-    Demonstates the Producer-Consumer Solution
+    Demonstrates the Producer-Consumer problem
  */
 
-/*! \fn producer
-    \brief Creates events and adds them to buffer
-    \param theBuffer
-    \param numLoops number of times event will be produced
+/*! \fn void consumer
+    \brief removes a character from the safe buffer, at random time intevals and
+    keeps track of the count of each letter removed.
+    \param sBuff the SafeBuffer
 */
-void producer(std::shared_ptr<SafeBuffer> theBuffer, int numLoops)
-{
-
-  for (int i = 0; i < numLoops; ++i)
+void consumer(std::shared_ptr<SafeBuffer> sBuff) {
+  char c;
+  while (c != 'X')
   {
-    //Produce event and add to buffer
-    Event e;
-    theBuffer->push(e);
+     c = sBuff->Pop();
+     std::cout << "Consuming " << c << std::endl;
+     std::this_thread::sleep_for(std::chrono::milliseconds(std::rand()%1000));
+     characterCountBuffer[c]++;
   }
 }
 
-/*! \fn consumer
-    \brief Takes events from buffer and consumes them
-    \param theBuffer
-    \param numLoops number of times event will be produced
+/*! \fn void producer
+    \brief producer adds a random character to a safe buffer, at random timer intervals.
+    When it has produced numCharacters amount of items it pushs 'X' to the buffer to signal the end.
+    \param sBuff the SafeBuffer
+    \param numCharacters number of characters per thread
 */
-void consumer(std::shared_ptr<SafeBuffer> theBuffer, int numLoops)
-{
-
-  for (int i = 0; i < numLoops; ++i)
+void producer(std::shared_ptr<SafeBuffer> sBuff, int numCharacters) {
+  char c;
+  int i = 0;
+  while ( i <= numCharacters)
   {
-    //Produce event and add to buffer
-    Event e = theBuffer->pop();
-    e.consume();
+    std::this_thread::sleep_for(std::chrono::milliseconds(std::rand()%1000));
+    c =  std::rand() % 26 + 97;
+    sBuff->Push(c);
+    i++;
+    std::cout << "Producing " << c << std::endl;
   }
+  sBuff->Push('X');
 }
 
-int main(void)
-{
+/*! \fn void printCharCount
+    \brief producer adds a random character to a safe buffer, at random timer intervals.
+    When it has produced numCharacters amount of items it pushs 'X' to the buffer to signal the end.
+*/
+void printCharCount() {
+  for ( char i = 97; i < 123; ++i ) {
+    std::cout << i << ":" << characterCountBuffer[i] << std::endl;
+  }
+  std::cout << "Characters have been counted" << std::endl;
+}
 
-  std::vector<std::thread> producers(num_threads);
-  std::vector<std::thread> consumers(num_threads);
-  std::shared_ptr<SafeBuffer> aBuffer(new SafeBuffer());
-  /**< Launch the threads  */
-  for (std::thread &p : producers)
-  {
-    p = std::thread(producer, aBuffer, numLoops);
+int main(void) {
+  int numCharacters;
+  std::shared_ptr<SafeBuffer> sBuff(new SafeBuffer);
+  std::thread producerThread[num_threads];
+  std::thread consumerThread[num_threads];
+
+  std::cout << "How many characters will each thread use?" << std::endl;
+  std::cin >> numCharacters;
+
+  for ( int i = 0; i < 5; i++ ) {
+    producerThread[i] = std::thread(producer, sBuff, numCharacters);
+    consumerThread[i] = std::thread(consumer, sBuff);
   }
-  for (std::thread &c : consumers)
-  {
-    c = std::thread(consumer, aBuffer, numLoops);
+
+  for ( int i = 0; i < 5; i++ ) {
+    producerThread[i].join();
+    consumerThread[i].join();
   }
-  /**< Join the threads with the main thread */
-  for (auto &p : producers)
-  {
-    p.join();
-  }
-  for (auto &c : consumers)
-  {
-    c.join();
-  }
-  std::cout << std::endl;
+
+  printCharCount();
   return 0;
 }

@@ -1,10 +1,27 @@
-The README file is a text file that explains what a project is.
-It should contain information on
+Lab 6 - Producer-Consumer
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+Author: William Nolan
+Licence: GNU
+
+This Lab demonstrates a 2 classes a producer and consumer working on a thread safe buffer using semaphores.
+The producer generates random characters from ‘a’ to ‘z’ at random intervals (between 0 and 1 second in length).
+It adds these to a thread safe buffer that has a finite holding capacity of N characters. It generates a preset number of
+characters (determined at runtime) and when it has finished it add an ‘X’ character to the buffer and exits. The consumer
+takes these letters from the buffer at random time intervals (between 0 and 1 second in length) and records how many of
+each letter it consumes. Once it sees an ‘X’ in the buffer it adds its character count to a central buffer and exits.
+
+Project installation
+Make sure you are in the directory with the .cpp files.
+To compile and run the project, run the following commands in terminal:
+make
+./prodCon
+
+List of files
+1. main.cpp
+    - The main function.
+    - Runs the Threads.
+    - Implements Producer-Consumer problem.
+2. Semaphore.cpp | Semaphore.h
+    - Contains the Semaphore code.
+3. SafeBuffer.cpp | SafeBuffer.h
+    - Contains the Safe Buffer code.

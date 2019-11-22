@@ -66,13 +66,12 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Run two threads, one's consumer, one's producer.  
+<p>Demonstrates the Producer-Consumer problem.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_safe_buffer_8h_source.html">SafeBuffer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_event_8h_source.html">Event.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
@@ -83,44 +82,32 @@ Include dependency graph for main.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3d0719b4bcba12452a2f7b9b40c6c6d9"><td class="memItemLeft" align="right" valign="top"><a id="a3d0719b4bcba12452a2f7b9b40c6c6d9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>producer</b> (std::shared_ptr&lt; <a class="el" href="class_safe_buffer.html">SafeBuffer</a> &gt; theBuffer, int numLoops)</td></tr>
-<tr class="separator:a3d0719b4bcba12452a2f7b9b40c6c6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a279a06d7a4fa4c1a824324bbd87e848d"><td class="memItemLeft" align="right" valign="top"><a id="a279a06d7a4fa4c1a824324bbd87e848d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>consumer</b> (std::shared_ptr&lt; <a class="el" href="class_safe_buffer.html">SafeBuffer</a> &gt; theBuffer, int numLoops)</td></tr>
-<tr class="separator:a279a06d7a4fa4c1a824324bbd87e848d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="memitem:a06f822f6216db0754a4084cd8cd8b968"><td class="memItemLeft" align="right" valign="top"><a id="a06f822f6216db0754a4084cd8cd8b968"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>consumer</b> (std::shared_ptr&lt; <a class="el" href="class_safe_buffer.html">SafeBuffer</a> &gt; sBuff)</td></tr>
+<tr class="separator:a06f822f6216db0754a4084cd8cd8b968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710ba4b6953e40d82606c7d21c322a74"><td class="memItemLeft" align="right" valign="top"><a id="a710ba4b6953e40d82606c7d21c322a74"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>producer</b> (std::shared_ptr&lt; <a class="el" href="class_safe_buffer.html">SafeBuffer</a> &gt; sBuff, int numCharacters)</td></tr>
+<tr class="separator:a710ba4b6953e40d82606c7d21c322a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51d0a6209cd841a5dc7fce643a0108f"><td class="memItemLeft" align="right" valign="top"><a id="af51d0a6209cd841a5dc7fce643a0108f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af51d0a6209cd841a5dc7fce643a0108f">printCharCount</a> ()</td></tr>
+<tr class="memdesc:af51d0a6209cd841a5dc7fce643a0108f"><td class="mdescLeft">&#160;</td><td class="mdescRight">producer adds a random character to a safe buffer, at random timer intervals. When it has produced numCharacters amount of items it pushs 'X' to the buffer to signal the end. <br /></td></tr>
+<tr class="separator:af51d0a6209cd841a5dc7fce643a0108f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top"><a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9e8b5393f1bbde008412166f2bba8186"><td class="memItemLeft" align="right" valign="top"><a id="a9e8b5393f1bbde008412166f2bba8186"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>numLoops</b> = 20</td></tr>
-<tr class="separator:a9e8b5393f1bbde008412166f2bba8186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02748b4e1c2d836d0b0e37a5345d260b"><td class="memItemLeft" align="right" valign="top"><a id="a02748b4e1c2d836d0b0e37a5345d260b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>characterCountBuffer</b> [26] = {0}</td></tr>
+<tr class="separator:a02748b4e1c2d836d0b0e37a5345d260b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08963f7335eef295237ab460863bc3d5"><td class="memItemLeft" align="right" valign="top"><a id="a08963f7335eef295237ab460863bc3d5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>num_threads</b> = 5</td></tr>
+<tr class="separator:a08963f7335eef295237ab460863bc3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Run two threads, one's consumer, one's producer. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>&lt; Launch the threads </p>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="textblock"><p>Demonstrates the Producer-Consumer problem. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
