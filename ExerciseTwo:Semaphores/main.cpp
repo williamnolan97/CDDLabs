@@ -2,26 +2,30 @@
 //Creation Date: 21-11-2019
 //Licence: GNU
 
+/*! \file main.cpp
+    \brief An implementation of a semphore.
+*/
+
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
 #include <unistd.h>
 
-/** @brief An implementation of a semaphore. Thread associated with taskTwo must wait to be signalled by
- * task associated with taskOne.
- *
- * @return a message
- * @param sem shared semaphore object
- * @param taskOneDelay represents the time for the thread to sleep.
+/*! \brief An implementation of a semaphore. Thread associated with taskTwo must wait to be signalled by
+    task associated with taskOne.
+
+    \return a message
+    \param sem shared semaphore object
+    \param taskOneDelay represents the time for the thread to sleep.
  */
 
 /*! \mainpage Lab 2
- *
- * \section Semaphores
- *
- * This lab demonstrates semaphores by getting two threads to execute a task each.
- * The second task may only begin once it has been signalled by task one.
- *
+
+    \section Semaphores
+
+    This lab demonstrates semaphores by getting two threads to execute a task each.
+    The second task may only begin once it has been signalled by task one.
+
  */
 
 /*! \fn void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)

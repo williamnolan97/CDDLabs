@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "ExerciseTwo:Semaphores", "index.html", [
+  [ "Exercise Two: Semaphores", "index.html", [
     [ "Lab 2", "index.html", [
       [ "Semaphores", "index.html#Semaphores", null ]
     ] ],
@@ -9,7 +9,11 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ]
+      [ "File List", "files.html", "files" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ]
+      ] ]
     ] ]
   ] ]
 ];

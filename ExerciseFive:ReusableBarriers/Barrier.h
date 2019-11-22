@@ -1,6 +1,10 @@
 //Author: William Nolan
 //Creation Date: 21-11-2019
-//Licence: GNU 
+//Licence: GNU
+
+/*! \file Barrier.h
+    \brief Barrier class definition.
+ */
 
 /* Code: */
 #pragma once

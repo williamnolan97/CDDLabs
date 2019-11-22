@@ -9,7 +9,7 @@
 /*! \class Signal
     \brief An Implementation of Threads Using Semaphores
 
-   Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions
+    Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions
 
 */
 /*! displays a message first*/

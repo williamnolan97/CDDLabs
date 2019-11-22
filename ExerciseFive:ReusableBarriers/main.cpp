@@ -3,13 +3,22 @@
 #include <thread>
 #include <vector>
 
+/*! \file main.cpp
+    \brief Runs a number of threads and makes them wait at a barrier before proceeding.
+*/
 
 static const int num_threads = 100;
 int sharedVariable=0;
 
+/*! \mainpage Lab 5
+    \section Reusable Barriers
+    Creates a barrier for a number of threads
+ */
 
 /*! \fn barrierTask
     \brief An example of using a reusable barrier
+    \param theBarrier the barrier for the threads to used
+    \param numLoops the amount of loops the threads go through
 */
 /*! displays a message that is split in to 2 sections to show how a rendezvous works*/
 void barrierTask(std::shared_ptr<Barrier> theBarrier, int numLoops)

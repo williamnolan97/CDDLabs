@@ -7,7 +7,7 @@
 /*! \class Semaphore
     \brief A Semaphore Implementation
 
-   Uses C++11 features such as mutex and condition variables to implement Semaphore
+    Uses C++11 features such as mutex and condition variables to implement Semaphore
 
 */
 void Semaphore::Wait()
