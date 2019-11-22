@@ -1,11 +1,15 @@
+//Author: William Nolan
+//Creation Date: 21-11-2019
+//Licence: GNU
+
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
 #include <unistd.h>
 /*! \class Signal
-    \brief An Implementation of Threads Using Semaphores 
+    \brief An Implementation of Threads Using Semaphores
 
-   Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
+   Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions
 
 */
 /*! displays a message first*/

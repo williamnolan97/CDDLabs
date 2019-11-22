@@ -1,3 +1,7 @@
+//Author: William Nolan
+//Creation Date: 21-11-2019
+//Licence: GNU 
+
 #include "Semaphore.h"
 /*! \class Semaphore
     \brief A Semaphore Implementation

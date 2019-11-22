@@ -1,5 +1,9 @@
+//Author: William Nolan
+//Creation Date: 21-11-2019
+//Licence: GNU 
+
 #ifndef SEMAPHORE_H
-#define SEMAPHORE_H 
+#define SEMAPHORE_H
 #include <mutex>
 #include <condition_variable>
 #include <chrono>
