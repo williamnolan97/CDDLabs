@@ -1,6 +1,6 @@
 //Author: William Nolan
 //Creation Date: 21-11-2019
-//Licence: GNU 
+//Licence: GNU
 
 #ifndef SEMAPHORE_H
 #define SEMAPHORE_H
@@ -13,7 +13,6 @@
    Uses C++11 features such as mutex and condition variables to implement Semaphore
 
 */
-
 
 class Semaphore
 {
